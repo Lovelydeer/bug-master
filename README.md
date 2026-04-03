@@ -23,3 +23,11 @@
 > 这种也叫 fail-fast 机制, 快速失败, 以避免不可控现象.
 
 [Do Not Touch Me](./src/main/java/top/mebeforeyou/list/ModifyModCount.java)
+
+## 时间管理大逝 - SimpleDateFormat
+> java 8 之前 的时间API 有一些有问题, 存在线程安全问题 比如 SimpleDateFormat
+> 原因在于: SimpleDateFormat 内部使用了共享的可变对象（Calendar 等），多线程同时使用会互相干扰，导致数据错乱或异常。
+
+**如有不适, 应转移战场**  ----- *from DateTimeFormatter* 
+
+[原来有这么多人啊](./src/main/java/top/mebeforeyou/time/UnsafeSimpleDateFormat.java)
