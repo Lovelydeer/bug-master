@@ -24,6 +24,20 @@
 
 [Do Not Touch Me](./src/main/java/top/mebeforeyou/list/ModifyModCount.java)
 
+## The boy you made, but you can't control it ---- ArrayList
+> 在初始化 ArrayList 时，底层会创建一个数组（默认初始容量通常为 10，或由构造器指定）。
+> 这个数组的容量（capacity）可以自动扩展，但我们无法直接控制底层数组本身，只能通过 ArrayList 间接管理。
+>
+> 当调用 add() 方法时，如果当前元素数量超过容量，就会触发扩容操作，同时 size 才会随之增加。
+>
+> 需要注意的是，size 表示当前实际存储的元素个数，而不是底层数组的长度。
+> 
+> 此外，set(index, value) 只能修改已存在位置的元素，不会改变 size，也不能用于扩展列表。
+
+ArrayList 只允许在“已有元素范围（size）内修改”，capacity 只是物理存储空间，不代表逻辑上可访问的元素。
+
+[You know nothing about me](./src/main/java/top/mebeforeyou/list/DynamicAllocateArrayList.java)
+
 ## 时间管理大逝 - SimpleDateFormat
 > java 8 之前 的时间API 有一些有问题, 存在线程安全问题 比如 SimpleDateFormat
 > 原因在于: SimpleDateFormat 内部使用了共享的可变对象（Calendar 等），多线程同时使用会互相干扰，导致数据错乱或异常。
